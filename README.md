@@ -37,11 +37,20 @@ py -3 -m PyInstaller --noconfirm --clean --onefile --windowed --name SRPlayer --
 ```
 
 Linux: 
-شغل الامر التالي في الترمنال داخل مسار ملف الـ python
+شغل ملف Shell script في الترمنال بمسار مجلد المصدر وهو ملف build_linux_debian.sh
+```
+#!/usr/bin/env bash
+sudo apt update -y
+sudo apt install -y python3 python3-venv
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install PyQt6 av pyinstaller
+
+pyinstaller --clean --onefile --windowed --name SRPlayer --add-data "Data:Data" --icon SR.ico SR.py
 
 ```
-py -3 -m PyInstaller --noconfirm --clean --onefile --windowed --name SRPlayer --add-data "Data;Data" --icon SR.ico SR.py
-```
+بعد تشغيل الملف سوف يتم أنشاء مجلد dist وبه ملف البرنامج ويمكن تداوله كنسخة محمولة
 
 ## الملفات التي ينشئها التطبيق
 
