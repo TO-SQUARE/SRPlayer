@@ -37,8 +37,11 @@ py -3 -m PyInstaller --noconfirm --clean --onefile --windowed --name SRPlayer --
 ```
 
 Linux: 
+شغل الامر التالي في الترمنال داخل مسار ملف الـ python
+
 شغل ملف Shell script في الترمنال بمسار مجلد المصدر وهو ملف build_linux_debian.sh
 ```
+py -3 -m PyInstaller --noconfirm --clean --onefile --windowed --name SRPlayer --add-data "Data;Data" --icon SR.ico SR.py
 #!/usr/bin/env bash
 sudo apt update -y
 sudo apt install -y python3 python3-venv
